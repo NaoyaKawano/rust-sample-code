@@ -1,16 +1,10 @@
+mod model;
+
+use model::person::Person;
 use rusqlite::{Connection, Result};
 
 // データベースファイル名
 const DB_FILE: &str = "test.db";
-
-// Person構造体
-// データベースのテーブルに対応する構造体
-#[derive(Debug)]
-struct Person {
-    id: i32,      // idは自動採番なので、挿入時には指定しない
-    name: String, // 名前
-    data: String, // 何らかのデータ
-}
 
 // main関数
 fn main() -> Result<()> {
